@@ -1,0 +1,158 @@
+===================================================
+  Assignement Two 
+  Jarrod Colburn      
+ 2016-01-28 16:50:06
+===================================================
+
+----------------------------------------------------------------------
+Command to find out your shell default umask:
+----------------------------------------------------------------------
+umask
+0077
+----------------------------------------------------------------------
+Command to create directory hw2
+----------------------------------------------------------------------
+
+Your current location: /home/CS/jcc0032/cs390 
+
+total 44
+-rw------- 1 jcc0032 csuser 7442 Jan 28 09:05 edit.sh
+drwx------ 2 jcc0032 csuser    7 Jan 19 08:45 hw1
+-rw------- 1 jcc0032 csuser 7704 Jan 19 09:11 hw1.tar.gz.rc2
+drwx------ 2 jcc0032 csuser    2 Jan 28 10:09 hw2
+-rw------- 1 jcc0032 csuser 3353 Jan 28 09:46 hw2first.out
+-rw------- 1 jcc0032 csuser  590 Jan 28 10:09 hw2.out
+-rwx------ 1 jcc0032 csuser 7442 Jan 21 13:55 hw2.sh
+drwx------ 2 jcc0032 csuser   58 Dec  3  1999 ladsrc
+-rw------- 1 jcc0032 csuser    7 Jan 19 08:26 README.md
+----------------------------------------------------------------------
+What are the permissions (in letter) of directory hw2 based on the previous output?
+----------------------------------------------------------------------
+rwx------
+----------------------------------------------------------------------
+Give the above permissions in octave:
+----------------------------------------------------------------------
+700
+----------------------------------------------------------------------
+Give the command to modify the permissions of directory hw2 so only you can access
+----------------------------------------------------------------------
+chmod go-rwx hw2
+total 44
+-rw------- 1 jcc0032 csuser 7442 Jan 28 09:05 edit.sh
+drwx------ 2 jcc0032 csuser    7 Jan 19 08:45 hw1
+-rw------- 1 jcc0032 csuser 7704 Jan 19 09:11 hw1.tar.gz.rc2
+drwx------ 2 jcc0032 csuser    2 Jan 28 10:09 hw2
+-rw------- 1 jcc0032 csuser 3353 Jan 28 09:46 hw2first.out
+-rw------- 1 jcc0032 csuser 1751 Jan 28 10:10 hw2.out
+-rwx------ 1 jcc0032 csuser 7442 Jan 21 13:55 hw2.sh
+drwx------ 2 jcc0032 csuser   58 Dec  3  1999 ladsrc
+-rw------- 1 jcc0032 csuser    7 Jan 19 08:26 README.md
+----------------------------------------------------------------------
+What are the file permissions of file hw1/info.txt
+----------------------------------------------------------------------
+rw-------
+-rw------- 1 jcc0032 csuser 142 Jan 19 08:45 hw1/info.txt
+----------------------------------------------------------------------
+Give the command to add execution permission to hw1/info.txt to YOU only
+----------------------------------------------------------------------
+chmod u+x ./hw1/info.txt
+-rw------- 1 jcc0032 csuser 142 Jan 19 08:45 hw1/info.txt
+
+============================================================================
+The following questions to exercise shell meta characters for file locating
+============================================================================
+
+----------------------------------------------------------------------
+
+Download tarball ladsrc.tar.gz from class website...
+
+----------------------------------------------------------------------
+wget http://zeta.itsc.uah.edu/cs390/assignments/ladsrc.tar.gz
+----------------------------------------------------------------------
+Give cmd to create directories a-gFiles h-oFiles p-zFiles include 
+----------------------------------------------------------------------
+mkdir -p a-gFiles h-oFiles p-zFiles include
+----------------------------------------------------------------------
+Copy all the .c files (in ladsrc) starting with letter [a-g] to directory a-gFiles 
+----------------------------------------------------------------------
+cp ladsrc/a.c ladsrc/broken.c ladsrc/broken-fixed.c ladsrc/calc.c ladsrc/cat.c ladsrc/checkflags.c ladsrc/daytime.c ladsrc/dbsimple.c ladsrc/dircontents.c ladsrc/gather.c ladsrc/globit.c a-gFiles
+files in a-gFiles
+a.c
+broken.c
+broken-fixed.c
+calc.c
+cat.c
+checkflags.c
+daytime.c
+dbsimple.c
+dircontents.c
+gather.c
+globit.c
+----------------------------------------------------------------------
+Copy all the .c files starting withletter [h-o] to directory h-oFiles 
+----------------------------------------------------------------------
+cp ladsrc/hwwrite.c ladsrc/id.c ladsrc/ladsh1.c ladsrc/ladsh2.c ladsrc/ladsh3.c ladsrc/ladsh4.c ladsrc/libhello.c ladsrc/loadhello.c ladsrc/lock.c ladsrc/lookup.c ladsrc/map-cat.c ladsrc/match.c ladsrc/minopen.c ladsrc/mknod.c ladsrc/monitor.c ladsrc/mpx-blocks.c ladsrc/mpx-nonblock.c ladsrc/mpx-select.c h-oFiles
+files in h-oFiles
+hwwrite.c
+id.c
+ladsh1.c
+ladsh2.c
+ladsh3.c
+ladsh4.c
+libhello.c
+loadhello.c
+lock.c
+lookup.c
+map-cat.c
+match.c
+minopen.c
+mknod.c
+monitor.c
+mpx-blocks.c
+mpx-nonblock.c
+mpx-select.c
+----------------------------------------------------------------------
+Copy all the .c files starting withletter [p-z] to directory p-zFiles 
+----------------------------------------------------------------------
+cp ladsrc/passfd.c ladsrc/phones.c ladsrc/popenglob.c ladsrc/ptypair.c ladsrc/ptytest.c ladsrc/readpass.c ladsrc/robin.c ladsrc/s1.c ladsrc/services.c ladsrc/setflags.c ladsrc/sighup.c ladsrc/slcharset.c ladsrc/slecho.c ladsrc/slinit.c ladsrc/sockutil.c ladsrc/statsamp.c ladsrc/t.c ladsrc/tclient.c ladsrc/tserver.c ladsrc/uclient.c ladsrc/usehello.c ladsrc/userver.c p-zFiles
+files in p-zFiles
+passfd.c
+phones.c
+popenglob.c
+ptypair.c
+ptytest.c
+readpass.c
+robin.c
+s1.c
+services.c
+setflags.c
+sighup.c
+slcharset.c
+slecho.c
+slinit.c
+sockutil.c
+statsamp.c
+t.c
+tclient.c
+tserver.c
+uclient.c
+usehello.c
+userver.c
+----------------------------------------------------------------------
+Copy all header file (.h) to directory include 
+----------------------------------------------------------------------
+cp ladsrc/libhello.h ladsrc/ptypair.h ladsrc/sockutil.h include
+files in include
+libhello.h
+ptypair.h
+sockutil.h
+----------------------------------------------------------------------
+Using find command to list files of size larger than 10kB under directory ladsrc 
+----------------------------------------------------------------------
+find ./ladsrc -size +10k
+-rw------- 1 jcc0032 csuser 11K Nov  1  2001 ./ladsrc/ladsh1.c
+-rw------- 1 jcc0032 csuser 16K Nov  1  2001 ./ladsrc/ladsh2.c
+-rw------- 1 jcc0032 csuser 19K Nov  1  2001 ./ladsrc/ladsh3.c
+-rw------- 1 jcc0032 csuser 22K Nov  1  2001 ./ladsrc/ladsh4.c
+uid=30296(jcc0032) gid=10513(csuser) groups=10513(csuser),10068(BUILTIN\users),20498(debugger users)
+Linux havoc 3.13.0-62-generic #102-Ubuntu SMP Tue Aug 11 14:29:36 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
